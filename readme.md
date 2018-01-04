@@ -1,16 +1,12 @@
 # Calc_MCN
 
-Python code to calculate the meridional coloring number of a knot diagram as outlined in [Wirtinger systems of generators of knot groups][wirtpaper].
+Python code to calculate the meridional coloring number of a knot diagram.
 
 ## Description
 
 *In progress*
 
-The *meridional coloring number* of a knot diagram is the minimal number of generators required to generate the Wirtinger presentation of that knot diagram.  The problem of finding these generators can be reduced to assigning unique colors to a subset of the strands of the diagram and attempting to color the rest of the diagram according to a certain rule.
-
-More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
-
-Full details of the algorithm are in *Section 4: Appendix: Computing $$\omega(D)$$* of the paper [Wirtinger systems of generators of knot groups][wirtpaper].
+Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirtinger systems of generators of knot groups][wirtpaper].
 
 
 ## Usage
@@ -79,6 +75,8 @@ Note that the Gauss codes for Examples 1 and 2 are in different formats.  `calc_
 ## Details
 
 *In progress*
+
+More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
 
 ## To Do
 
