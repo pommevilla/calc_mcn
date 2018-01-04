@@ -80,9 +80,10 @@ More information about the Gauss code of a knot diagram can be found [here][gaus
 
 ## To Do
 
-*In progress*
-
-I am currently working on a dynamic programming solution for calculating the meridional coloring number of a knot diagram.  
+- [ ] Implement dynamic programming solution 
+- [ ] Complete out Description
+- [ ] Complete out Details
+- [ ] *(long term)* Publish `knot_utils` package
 
 ## Contact
 
