@@ -70,13 +70,19 @@ Seed strand set: ('A', 'B', 'D')
 Meridional coloring number: 3
 ```
 
-Note that the Gauss codes for Examples 1 and 2 are in different formats.  calc_mcn can handle Gauss code inputs with or without commas.
+Note that the Gauss codes for Examples 1 and 2 are in different formats.  `calc_mcn` can handle Gauss code inputs with or without commas.
+
+## Warnings
+
+`calc_mcn` does NOT check for incorrect Gauss codes and will likely crash or return nonsensical answers.  "Incorrect" here means Gauss codes where there is some integer `x` without a corresponding `-x`.
 
 ## Details
 
-
+*In progress*
 
 ## To Do
+
+*In progress*
 
 I am currently working on a dynamic programming solution for calculating the meridional coloring number of a knot diagram.  
 
