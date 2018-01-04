@@ -146,7 +146,6 @@ def print_knot_dictionary(kd):
 if __name__ == '__main__':
     
     gauss_code = process_gauss_code(argv)    
-    print("\nGauss code: {}\n".format(gauss_code))
     
 
     knot_dict = create_knot_dictionary(gauss_code)
