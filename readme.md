@@ -45,9 +45,8 @@ See
 
 ### Example 1
 
-A Gauss code corresponding to a knot diagram of the [figure eight knot][fig8] is 1, -4, 3, -1, 2, -3, 4, -2. 
+A Gauss code corresponding to a knot diagram of the [figure eight knot][fig8] is 1, -4, 3, -1, 2, -3, 4, -2.  Calling calc_mcn on this Gauss code will output the following:
 
-Input:
 ```
 >python calc_mcn.py 1 -4 3 -1 2 -3 4 -2
 
@@ -65,7 +64,7 @@ Meridional coloring number: 2
 
 ### Example 2
 
-A Gauss code corresponding to a knot diagram of [K11n170][sample_knot] is 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7.  
+A Gauss code corresponding to a knot diagram of [K11n170][sample_knot] is 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7.  Calling calc_mcn on this Gauss code will output the following:
 
 ```
 >python calc_mcn.py 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7
@@ -91,8 +90,6 @@ Meridional coloring number: 3
 
 Note that the Gauss codes for Examples 1 and 2 are in different formats.  calc_mcn can handle Gauss code inputs with or without commas.
 
-
-
 ## Details
 
 
@@ -103,7 +100,7 @@ I am currently working on a dynamic programming solution for calculating the mer
 
 ## Contact
 
-Send questions and comments to pvillanueva13 at gmail dot com.
+Send questions, comments, and feedback to pvillanueva13 at gmail dot com.
 
 [wirtpaper]: https://arxiv.org/abs/1705.03108
 [gaussinfo]: http://katlas.org/wiki/Gauss_Codes
