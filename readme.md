@@ -4,6 +4,8 @@ Python code to calculate the meridional coloring number of a knot diagram as out
 
 ## Description
 
+*In progress*
+
 The *meridional coloring number* of a knot diagram is the minimal number of generators required to generate the Wirtinger presentation of that knot diagram.  The problem of finding these generators can be reduced to assigning unique colors to a subset of the strands of the diagram and attempting to color the rest of the diagram according to a certain rule.
 
 More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
@@ -13,39 +15,19 @@ Full details of the algorithm are in *Section 4: Appendix: Computing $$\omega(D)
 
 ## Usage
 
-Let Gauss code be the corresponding Gauss
+Let `gauss_code` be a sequence of signed integers representing a knot diagram.  Open a command prompt in the same directory as `calc_mcn.py` and run `calc_mcn` from the command line by entering:
 
 ```
-python calc_mcn.py (Gauss code)
+>python calc_mcn.py gauss_code
 ```
 
-calc_mcn will output the knot dictionary corresponding to the Gauss code in the format
-
-```
-Knot dictionary:
-    STRAND     SUBSEQUENCE                   CROSSINGS OVER
-       A       (-8, -2)
-       B       (-6, -11)
-       ...		...							 ...
-       K       (-7, 5, 2, -6)                ('J', 'H') ('F', 'A')
-
-Meridional coloring number: mcn()
-Seed strand set: {'F', 'D', 'A'}	
-```
-
-## Arguments
-
-```
-gauss code - a sequence of signed integers derived from a walk on a knot diagram.
-```
-
-See 
+The output will be the knot dictionary corresponding to `gauss_code`, the seed strands that lead to a successful coloring, and the meridional coloring number of the knot diagram described by `gauss_code`.  See examples below.
 
 ## Examples
 
 ### Example 1
 
-A Gauss code corresponding to a knot diagram of the [figure eight knot][fig8] is 1, -4, 3, -1, 2, -3, 4, -2.  Calling calc_mcn on this Gauss code will output the following:
+A Gauss code corresponding to a knot diagram of the [figure eight knot][fig8] is 1, -4, 3, -1, 2, -3, 4, -2.  Calling `calc_mcn` on this Gauss code will output the following:
 
 ```
 >python calc_mcn.py 1 -4 3 -1 2 -3 4 -2
@@ -64,7 +46,7 @@ Meridional coloring number: 2
 
 ### Example 2
 
-A Gauss code corresponding to a knot diagram of [K11n170][sample_knot] is 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7.  Calling calc_mcn on this Gauss code will output the following:
+A Gauss code corresponding to a knot diagram of [K11n170][sample_knot] is 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7.  Calling `calc_mcn` on this Gauss code will output the following:
 
 ```
 >python calc_mcn.py 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7
