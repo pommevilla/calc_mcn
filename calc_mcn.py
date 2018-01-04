@@ -1,3 +1,11 @@
+'''
+    File name: calc_mcn.py
+    Author: Paul Villanueva
+    Date created: 1/3/2018
+    Date last modified: 1/4/2018
+    Python Version: 3.6
+'''
+
 from sys import argv
 from itertools import combinations
 
