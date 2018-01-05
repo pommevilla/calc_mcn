@@ -83,6 +83,7 @@ More information about the Gauss code of a knot diagram can be found [here][gaus
 - [ ] Implement dynamic programming solution 
 - [ ] Complete out Description
 - [ ] Complete out Details
+- [ ] Post meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
 - [ ] *(long term)* Publish `knot_utils` package
 
 ## Contact
