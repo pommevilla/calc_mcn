@@ -80,12 +80,14 @@ Note that the Gauss codes for Examples 1 and 2 are in different formats.  `calc_
 
 More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
 
+This code was used to calculate meridional coloring number for all prime knots of 13, 14, 15, and 16 crossings.  Spreadsheets containing this information is available on Alexandra Kjuchukova's website [here][bridgelink].  Further information can be find there.
+
 ## To Do
 
 - [ ] Implement dynamic programming solution 
 - [ ] Complete Description
 - [ ] Complete Details
-- [ ] Post meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
+- [x] ~~Post~~ Link meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
 - [ ] *(long term)* Publish `knot_utils` package
 
 ## Contact
@@ -96,4 +98,4 @@ Send questions, comments, and feedback to pvillanueva13 at gmail dot com.
 [gaussinfo]: http://katlas.org/wiki/Gauss_Codes
 [fig8]: http://katlas.org/wiki/4_1
 [sample_knot]: http://katlas.org/wiki/K11n170
-
+[bridgelink]: https://sites.google.com/a/wisc.edu/alexandra-a-kjuchukova/bridge-numbers
