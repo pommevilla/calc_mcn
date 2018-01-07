@@ -19,6 +19,8 @@ Let `gauss_code` be a sequence of signed integers representing a knot diagram.  
 
 The output will be the knot dictionary corresponding to `gauss_code`, the seed strands that lead to a successful coloring, and the meridional coloring number of the knot diagram described by `gauss_code`.  See examples below.
 
+Compiled on Python 3.
+
 ## Examples
 
 ### Example 1
