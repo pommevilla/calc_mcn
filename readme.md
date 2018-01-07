@@ -6,7 +6,7 @@ Python code to calculate the meridional coloring number of a knot diagram.
 
 *In progress*
 
-Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirtinger systems of generators of knot groups][wirtpaper].
+Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirtinger systems of generators of knot groups][wirtpaper] that I wrote in collaboration with Ryan Blair, Alexandra Kjuchukova, and Roman Velazquez.
 
 
 ## Usage
