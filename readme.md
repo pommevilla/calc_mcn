@@ -87,6 +87,7 @@ This code was used to calculate meridional coloring number for all prime knots o
 - [ ] Implement dynamic programming solution 
 - [ ] Complete Description
 - [ ] Complete Details
+- [ ] Implement verbose options
 - [x] ~~Post~~ Link meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
 - [ ] *(long term)* Publish `knot_utils` package
 
