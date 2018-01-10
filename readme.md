@@ -30,7 +30,7 @@ Let `gc` be the Gauss code of a knot diagram `D`.  The outline of the program is
 	4. If not, repeat this process with all combinations of 3 strands.  Return 3 if a successful coloring is found.  
 	5. etc., etc...
 
-Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirtinger systems of generators of knot groups][wirtpaper] that I wrote in collaboration with Ryan Blair, Alexandra Kjuchukova, and Roman Velazquez.
+Full details of the algorithm are in *Section 4: Appendix* of "[Wirtinger systems of generators of knot groups][wirtpaper]," the paper that I wrote in collaboration with Ryan Blair, Alexandra Kjuchukova, and Roman Velazquez.
 
 ## Usage
 
