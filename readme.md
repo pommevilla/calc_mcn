@@ -8,6 +8,11 @@ Given a knot diagram, assign some *k* colors to a subset of its strands.  Then, 
 
 ![An example of a coloring move.][colmove]
 
+<p align = "center">
+	<img src="https://github.com/pommevilla/calc_mcn/blob/master/excolmov.jpg" alt="Example of a coloring move.">
+<p>
+
+
 If you can repeat this process to color the whole knot diagram, then we say that the diagram is *k*-meridionally colorable.  
 
 ![The figure eight knot is 2-meridionally colorable.][fig8col]
