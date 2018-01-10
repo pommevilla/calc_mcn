@@ -22,7 +22,8 @@ We define the **meridional coloring number** of a knot diagram to be the smalles
 
 This program automates the process of finding the meridional coloring number of a knot diagram.  Instead of keeping track of colors, we keep track of whether or not a strand has been colored with a set.  Then, a new strand can only be colored if the over-strand and under-strand that they are incident to at a crossing are already in this colored set.  A *knot dictionary*, derived from the diagram's Gauss code, is used to keep track of which strands are incident to each other. 
 
-Let gc be the Gauss code of a knot diagram D.  The outline of the program is:
+Let `gc` be the Gauss code of a knot diagram `D`.  The outline of the program is:
+
 	1. Derive knot dictionary k_d from gc. 
 	2. Pick 2 of the strands of D (represented by the keys of k_d) and attempt to 'color' the knot.
 	3. If the knot was 'colored', return 2.  If not, repeat with all combinations of 2 strands.  If a successful coloring is found, return 2.
