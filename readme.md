@@ -6,8 +6,6 @@ Python code to calculate the meridional coloring number of a knot diagram.
 
 Given a knot diagram, assign some *k* colors to a subset of its strands.  Then, at every crossing, if the over-strand and *only one* of the under-strands is colored, color the other under-strand the same color as the first over-strand.  
 
-![An example of a coloring move.][colmove]
-
 <p align = "center">
 	<img src="https://github.com/pommevilla/calc_mcn/blob/master/excolmov.jpg" alt="Example of a coloring move.">
 <p>
@@ -15,7 +13,10 @@ Given a knot diagram, assign some *k* colors to a subset of its strands.  Then, 
 
 If you can repeat this process to color the whole knot diagram, then we say that the diagram is *k*-meridionally colorable.  
 
-![The figure eight knot is 2-meridionally colorable.][fig8col]
+<p align = "center">
+	<img src="https://github.com/pommevilla/calc_mcn/blob/master/fig8col.jpg" alt="Sequence of coloring moves on the figure eight knot.">
+<p>
+
 
 We define the **meridional coloring number** of a knot diagram to be the smallest integer *k* such that the diagram is *k*-meridionally colorable.  For example, the meridional coloring number of the figure eight knot above is 2.  
 
@@ -157,7 +158,6 @@ In [our paper][wirtpaper], we define the *Wirtinger number* of a knot as the lea
 
 Send questions, comments, and feedback to pvillanueva13 at gmail dot com.
 
-[colmove]: https://github.com/pommevilla/calc_mcn/blob/master/excolmov.jpg
 [fig8col]: https://github.com/pommevilla/calc_mcn/blob/master/fig8col.jpg
 [wirtpaper]: https://arxiv.org/abs/1705.03108
 [gaussinfo]: http://katlas.org/wiki/Gauss_Codes
