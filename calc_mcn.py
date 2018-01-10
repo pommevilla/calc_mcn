@@ -267,7 +267,3 @@ def main():
 
 if __name__ == '__main__':    
     main()
-        
-    #python calc_mcn.py 1 -4 3 -1 2 -3 4 -2
-    
-    # python calc_mcn.py 1, -4, 3, -1, 2, -3, 4, -2
