@@ -13,7 +13,11 @@ from itertools import combinations
 
 def parse_user_input():
     '''
-    Parses user input for Gauss code input and option flags.
+    Parses user input for Gauss code input and option flags.   
+    
+    output:
+        a tuple containing the Namespace object returned by argparse and a list containing the user input without flags
+    
     '''
     parser = argparse.ArgumentParser(description = 'Calculate meridional coloring number of a knot diagram from its Gauss code')
                             
@@ -25,6 +29,7 @@ def parse_user_input():
         action = 'store_true',
         help = 'output knot dictionary')
                             
+    # parse_known_args is used instead of parse_args to allow input sequences both with and without commas.
     return parser.parse_known_args()
     
 def process_gauss_code(raw_gauss_code):
