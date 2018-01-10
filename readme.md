@@ -99,6 +99,8 @@ Calling `calc_mcn` with the `-q` (or `--quiet`) flag will change the output to o
 
 `calc_mcn` does NOT check for incorrect Gauss codes and will likely crash or return nonsensical answers.  "Incorrect" here means Gauss codes where there is some integer `x` without a corresponding `-x`.
 
+Can only currently handle knots with fewer than 26 crossings, though I have modified this program to work on knots of larger size.  I am happy to share this version if requested.
+
 ## Details
 
 *In progress*
