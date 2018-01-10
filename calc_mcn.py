@@ -21,13 +21,14 @@ def parse_user_input():
     '''
     parser = argparse.ArgumentParser(description = 'Calculate meridional coloring number of a knot diagram from its Gauss code')
                             
+    parser.add_argument('-v', '--verbose', 
+        action = 'store_true',
+        help = 'output knot dictionary')
     parser.add_argument('-q', '--quiet', 
         action = 'store_true', 
         help = 'only print mcn')
         
-    parser.add_argument('-v', '--verbose', 
-        action = 'store_true',
-        help = 'output knot dictionary')
+
                             
     # parse_known_args is used instead of parse_args to allow input sequences both with and without commas.
     return parser.parse_known_args()
