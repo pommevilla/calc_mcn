@@ -29,6 +29,13 @@ A Gauss code corresponding to a knot diagram of the [figure eight knot][fig8] is
 
 ```
 >python calc_mcn.py 1 -4 3 -1 2 -3 4 -2
+Meridional coloring number: 2
+```
+
+Calling `calc_mcn` with the `-v` (or `--verbose`) flag outputs the corresponding knot dictionary with the set of seed strands that lead to a complete coloring of the knot:
+
+```
+>python calc_mcn.py -v 1 -4 3 -1 2 -3 4 -2
 
 Knot dictionary:
 
@@ -48,6 +55,15 @@ A Gauss code corresponding to a knot diagram of [K11n170][sample_knot] is 1, -6,
 
 ```
 >python calc_mcn.py 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7
+Meridional coloring number: 3
+```
+
+Note that the Gauss codes for Examples 1 and 2 are in different formats.  `calc_mcn` can handle Gauss code inputs with or without commas.
+
+With the `--verbose` flag:
+
+```
+>python calc_mcn.py --verbose 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7 
 
 Knot dictionary:
 
@@ -68,7 +84,16 @@ Seed strand set: ('A', 'B', 'D')
 Meridional coloring number: 3
 ```
 
-Note that the Gauss codes for Examples 1 and 2 are in different formats.  `calc_mcn` can handle Gauss code inputs with or without commas.
+Calling `calc_mcn` with the `-q` (or `--quiet`) flag will change the output to only the meridional coloring number:
+
+```
+>python calc_mcn.py 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7 -q
+3
+```
+
+
+
+
 
 ## Warnings
 
