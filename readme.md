@@ -4,10 +4,26 @@ Python code to calculate the meridional coloring number of a knot diagram.
 
 ## Description
 
-*In progress*
+Given a knot diagram, assign some *k* colors to a subset of its strands.  Then, at every crossing, if the over-strand and *only one* of the under-strands is colored, color the other under-strand the same color as the first over-strand.  
+
+![An example of a coloring move.][colmove]
+
+If you can repeat this process to color the whole knot diagram, then we say that the diagram is *k*-meridionally colorable.  
+
+![The figure eight knot is 2-meridionally colorable.][fig8col]
+
+We define the **meridional coloring number** of a knot diagram to be the smallest integer *k* such that the diagram is *k*-meridionally colorable.  For example, the meridional coloring number of the figure eight knot above is 2.  
+
+This program automates the process of finding the meridional coloring number of a knot diagram.  Instead of keeping track of colors, we keep track of whether or not a strand has been colored with a set.  Then, a new strand can only be colored if the over-strand and under-strand that they are incident to at a crossing are already in this colored set.  A *knot dictionary*, derived from the diagram's Gauss code, is used to keep track of which strands are incident to each other. 
+
+Let gc be the Gauss code of a knot diagram D.  The outline of the program is:
+	1. Derive knot dictionary k_d from gc. 
+	2. Pick 2 of the strands of D (represented by the keys of k_d) and attempt to 'color' the knot.
+	3. If the knot was 'colored', return 2.  If not, repeat with all combinations of 2 strands.  If a successful coloring is found, return 2.
+	4. If not, repeat this process with all combinations of 3 strands.  Return 3 if a successful coloring is found.  
+	5. etc., etc...
 
 Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirtinger systems of generators of knot groups][wirtpaper] that I wrote in collaboration with Ryan Blair, Alexandra Kjuchukova, and Roman Velazquez.
-
 
 ## Usage
 
@@ -119,12 +135,14 @@ Can only currently handle knots with fewer than 26 crossings, though I have modi
 
 More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
 
-This code was used to calculate meridional coloring number for all prime knots of 13, 14, 15, and 16 crossings.  Spreadsheets containing this information is available on Alexandra Kjuchukova's website [here][bridgelink].  Further information can be find there.
+The motivation for this program comes from the problem of finding generating sets of the Wirtinger presentation of the fundamental group of a knot exterior.  The coloring described in the first paragraph is an abstraction of a Wirtinger relation derived from the crossing of a knot diagram.  Thus, when we find a set of *k* strands that colors a whole knot diagram, we have actually found a set of strands that generates the entire knot group via Wirtinger relations.  
+
+In [our paper][wirtpaper], we define the *Wirtinger number* of a knot as the least integer *n* such that the knot has a diagram that is *n*-meridionally colorable, and show that this number is equal to the bridge number of a knot.  Having done so, we established a combinatoric-based approach for finding the bridge number of a knot and have added bridge number information for knots with 12, 13, 14, 15, and 16 crossings. Sreadsheets containing this information are available on Alexandra Kjuchukova's website [here][bridgelink].  
 
 ## To Do
 
 - [ ] Implement dynamic programming solution 
-- [ ] Complete Description
+- [x] Complete Description
 - [x] Complete Details
 - [x] Implement verbose and quiet options
 - [x] ~~Post~~ Link meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
@@ -134,6 +152,8 @@ This code was used to calculate meridional coloring number for all prime knots o
 
 Send questions, comments, and feedback to pvillanueva13 at gmail dot com.
 
+[colmove]: https://github.com/pommevilla/calc_mcn/blob/master/excolmov.jpg
+[fig8col]: https://github.com/pommevilla/calc_mcn/blob/master/fig8col.jpg
 [wirtpaper]: https://arxiv.org/abs/1705.03108
 [gaussinfo]: http://katlas.org/wiki/Gauss_Codes
 [fig8]: http://katlas.org/wiki/4_1
