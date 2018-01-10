@@ -11,7 +11,7 @@ Given a knot diagram, assign some *k* colors to a subset of its strands.  Then, 
 <p>
 
 
-If you can repeat this process to color the whole knot diagram, then we say that the diagram is *k*-meridionally colorable.  
+If you can repeat this process to color the whole knot diagram, then we say that the diagram is *k*-meridionally colorable.  For example, in the diagram of the figure eight knot below, we begin with two colored strands and can continue to color the rest of strands according to the coloring rule presented above.  Therefore, this diagram of the figure eight knot is 2-meridionally colorable.
 
 <p align = "center">
 	<img src="https://github.com/pommevilla/calc_mcn/blob/master/fig8col.jpg" alt="Sequence of coloring moves on the figure eight knot.">
