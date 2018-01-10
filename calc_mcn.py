@@ -252,7 +252,7 @@ def main():
     
     if flags.verbose:
         print_knot_dictionary(knot_dict)
-        print('Seed strand set: {}'.format(seed_strand_set))
+        print('\nSeed strand set: {}'.format(seed_strand_set))
         print("Meridional coloring number: {}".format(mcn))
     elif flags.quiet:
         print(mcn)
@@ -263,6 +263,6 @@ def main():
 if __name__ == '__main__':    
     main()
         
-    #python scratch.py 1 -4 3 -1 2 -3 4 -2
+    #python calc_mcn.py 1 -4 3 -1 2 -3 4 -2
     
-    # python scratch.py 1, -4, 3, -1, 2, -3, 4, -2
+    # python calc_mcn.py 1, -4, 3, -1, 2, -3, 4, -2
