@@ -2,17 +2,34 @@
     File name: calc_mcn.py
     Author: Paul Villanueva
     Date created: 1/3/2018
-    Date last modified: 1/4/2018
+    Date last modified: 1/9/2018
     Python Version: 3.6
 '''
 
+import argparse
 from sys import argv
 from itertools import combinations
+ 
 
+def parse_user_input():
+    '''
+    Parses user input for Gauss code input and option flags.
+    '''
+    parser = argparse.ArgumentParser(description = 'Calculate meridional coloring number of a knot diagram from its Gauss code')
+                            
+    parser.add_argument('-q', '--quiet', 
+        action = 'store_true', 
+        help = 'only print mcn')
+        
+    parser.add_argument('-v', '--verbose', 
+        action = 'store_true',
+        help = 'output knot dictionary')
+                            
+    return parser.parse_known_args()
+    
 def process_gauss_code(raw_gauss_code):
     '''
     Formats input Gauss code for use in other functions.
-
     input:
         a sequence of characters or strings (which may contain commas) representing a Gauss code.
         
@@ -20,7 +37,7 @@ def process_gauss_code(raw_gauss_code):
         a list of signed integers representing the Gauss code of a knot diagram.
     '''
     
-    return [int(s.replace(',', '')) for s in argv[1:]]
+    return [int(s.replace(',', '')) for s in raw_gauss_code]
     
 def create_knot_dictionary(gauss_code):   
     '''
@@ -67,7 +84,6 @@ def find_strands(gauss_code):
     
     output:
         a dictionary whose keys are the strands of the knot diagram D.  
-
     The output knot dictionary is of the form
                 d_k = {
                     s_i: [(gauss_subseq), [c_1, c_2, . . ., c_n]]
@@ -121,7 +137,6 @@ def find_crossings(knot_dict, gauss_code):
     
     output:
         a dictionary whose keys are the strands of the knot diagram D.  
-
     The output knot dictionary is of the form
                 d_k = {
                     s_i: [(gauss_subseq), []]
@@ -184,7 +199,7 @@ def is_valid_coloring(seed_strands, knot_dict):
     
     return False
     
-def calc_mcn(knot_dict):
+def calc_mcn_info(knot_dict):
     '''
     Calculates the meridional coloring number of a knot diagram D.
     
@@ -213,7 +228,6 @@ def calc_mcn(knot_dict):
 def print_knot_dictionary(knot_dict):
     '''
     Nicely prints out a knot dictionary.
-
     input:
         knot_dict: a knot dictionary as put out by create_knot_dictionary.
         
@@ -227,13 +241,28 @@ def print_knot_dictionary(knot_dict):
         subsequence = knot_dict[strand][0]
         undercrossings = ' '.join([str(x) for x in knot_dict[strand][1]])
         print("{:^15}{:30}{}".format(strand, str(subsequence), undercrossings))
+        
+def main():
+    flags, raw_gauss_code = parse_user_input()
+    
+    gauss_code = process_gauss_code(raw_gauss_code)
+    knot_dict = create_knot_dictionary(gauss_code)
+
+    seed_strand_set, mcn = calc_mcn_info(knot_dict)
+    
+    if flags.verbose:
+        print_knot_dictionary(knot_dict)
+        print('Seed strand set: {}'.format(seed_strand_set))
+        print("Meridional coloring number: {}".format(mcn))
+    elif flags.quiet:
+        print(mcn)
+    else:
+        print("Meridional coloring number: {}".format(mcn))
     
 
 if __name__ == '__main__':    
-    gauss_code = process_gauss_code(argv)    
-    knot_dict = create_knot_dictionary(gauss_code)
-    print_knot_dictionary(knot_dict)
-    mcn_info = calc_mcn(knot_dict)
-    print("\nSeed strand set: {}\nMeridional coloring number: {}".format(*mcn_info))
-
+    main()
+        
+    #python scratch.py 1 -4 3 -1 2 -3 4 -2
     
+    # python scratch.py 1, -4, 3, -1, 2, -3, 4, -2
