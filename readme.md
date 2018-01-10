@@ -11,13 +11,30 @@ Full details of the algorithm are in *Section 4: Appendix* of the paper [Wirting
 
 ## Usage
 
-Let `gauss_code` be a sequence of signed integers representing a knot diagram.  Open a command prompt in the same directory as `calc_mcn.py` and run `calc_mcn` from the command line by entering:
+Download `calc_mcn.py` to a local directory (or just copy/paste the script from here).  
+
 
 ```
 >python calc_mcn.py gauss_code
 ```
 
-The output will be the knot dictionary corresponding to `gauss_code`, the seed strands that lead to a successful coloring, and the meridional coloring number of the knot diagram described by `gauss_code`.  See examples below.
+Here, `gauss_code` is a sequence of signed integers representing a knot diagram.  The output will be a line with the meridional coloring number of the knot diagram.
+
+There are optional arguments for quiet and verbose modes:
+
+```
+>python calc_mcn.py -h
+usage: calc_mcn.py [-h] [-v] [-q]
+
+Calculate meridional coloring number of a knot diagram from its Gauss code
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  output knot dictionary
+  -q, --quiet    only print mcn
+```
+
+In verbose mode, the output will also include the knot dictionary corresponding to the knot diagram as well as the seed strands that led to the first successful coloring. In quiet mode, the output will only be the integer representing the meridional coloring number of the knot diagram without any other text.  See examples below.
 
 Compiled on Python 3.
 
@@ -84,15 +101,12 @@ Seed strand set: ('A', 'B', 'D')
 Meridional coloring number: 3
 ```
 
-Calling `calc_mcn` with the `-q` (or `--quiet`) flag will change the output to only the meridional coloring number:
+Calling `calc_mcn` with the `-q` (or `--quiet`) flag will output only the meridional coloring number:
 
 ```
 >python calc_mcn.py 1, -6, 2, -9, 3, -1, 4, -10, 5, -2, 6, -4, -7, 11, -8, -3, 9, -5, 10, 8, -11, 7 -q
 3
 ```
-
-
-
 
 
 ## Warnings
@@ -103,8 +117,6 @@ Can only currently handle knots with fewer than 26 crossings, though I have modi
 
 ## Details
 
-*In progress*
-
 More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
 
 This code was used to calculate meridional coloring number for all prime knots of 13, 14, 15, and 16 crossings.  Spreadsheets containing this information is available on Alexandra Kjuchukova's website [here][bridgelink].  Further information can be find there.
@@ -113,7 +125,7 @@ This code was used to calculate meridional coloring number for all prime knots o
 
 - [ ] Implement dynamic programming solution 
 - [ ] Complete Description
-- [ ] Complete Details
+- [x] Complete Details
 - [x] Implement verbose and quiet options
 - [x] ~~Post~~ Link meridional coloring numbers for 13-, 14-, 15-, 16-crossing knots.
 - [ ] *(long term)* Publish `knot_utils` package
