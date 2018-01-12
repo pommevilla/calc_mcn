@@ -2,7 +2,7 @@
     File name: calc_mcn.py
     Author: Paul Villanueva
     Date created: 1/3/2018
-    Date last modified: 1/9/2018
+    Date last modified: 1/11/2018
     Python Version: 3.6
 '''
 
@@ -21,6 +21,9 @@ def parse_user_input():
     '''
     parser = argparse.ArgumentParser(description = 'Calculate meridional coloring number of a knot diagram from its Gauss code')
                             
+                            
+    parser.add_argument('gc', 
+        help = 'Gauss code of a knot diagram')
     parser.add_argument('-v', '--verbose', 
         action = 'store_true',
         help = 'output knot dictionary')
