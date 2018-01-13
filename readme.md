@@ -47,12 +47,9 @@ There are optional arguments for quiet and verbose modes:
 
 ```
 >python calc_mcn.py -h
-usage: calc_mcn.py [-h] [-v] [-q] gc
+usage: calc_mcn.py [-h] [-v] [-q] 
 
 Calculate meridional coloring number of a knot diagram from its Gauss code
-
-positional arguments:
-  gc             Gauss code of a knot diagram
 
 optional arguments:
   -h, --help     show this help message and exit
