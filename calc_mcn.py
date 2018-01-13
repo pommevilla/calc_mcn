@@ -1,5 +1,5 @@
 '''
-    File name: calc_mcn.py
+    File name: calc_wirt.py
     Author: Paul Villanueva
     Date created: 1/3/2018
     Date last modified: 1/11/2018
@@ -19,14 +19,14 @@ def parse_user_input():
         a tuple containing the Namespace object returned by argparse and a list containing the user input without flags
     
     '''
-    parser = argparse.ArgumentParser(description = 'Calculate meridional coloring number of a knot diagram from its Gauss code')
+    parser = argparse.ArgumentParser(description = 'Calculate Wirtinger number of a knot diagram from its Gauss code')
                             
     parser.add_argument('-v', '--verbose', 
         action = 'store_true',
         help = 'output knot dictionary')
     parser.add_argument('-q', '--quiet', 
         action = 'store_true', 
-        help = 'only print mcn')
+        help = 'only print Wirtinger number')
         
     # parse_known_args is used instead of parse_args to allow input sequences both with and without commas.
     return parser.parse_known_args()
@@ -88,6 +88,7 @@ def find_strands(gauss_code):
     
     output:
         a dictionary whose keys are the strands of the knot diagram D.  
+        
     The output knot dictionary is of the form
                 d_k = {
                     s_i: [(gauss_subseq), [c_1, c_2, . . ., c_n]]
@@ -95,6 +96,7 @@ def find_strands(gauss_code):
                     .
                     .
                 },
+                
     where s_i is the name of the strand and gauss_subseq is a tuple representing the subsequence of the
     Gauss code corresponding to the the strand.  The empty list will be populated with crossing
     information in the find_crossings function.       
@@ -180,10 +182,10 @@ def is_valid_coloring(seed_strands, knot_dict):
         seed_strands: a set of characters representing strands in the knot diagram D
         knot_dict: a dictionary representing the knot
     
-    See ReadMe.md for explanation of algorithm.
+    See readme.md for explanation of algorithm.
     
     output:
-        returns True if the seed_strands lead to a valid coloring of the knot and False otherwise
+        returns True if the seed_strands lead to a valid coloring of the knot, False otherwise
     '''
     
     seed_strands = set(seed_strands)
@@ -203,16 +205,16 @@ def is_valid_coloring(seed_strands, knot_dict):
     
     return False
     
-def calc_mcn_info(knot_dict):
+def calc_wirt_info(knot_dict):
     '''
-    Calculates the meridional coloring number of a knot diagram D.
+    Calculates the Wirtinger number of a knot diagram D.
     
     input:
         knot_dict: a dictionary representing a knot diagram D.
     
     output:
         a tuple of (strands, n) where strands is a subset of the keys of knot_dict and n
-        is the meridional coloring number of the knot diagram D.    
+        is the Wirtinger number of the knot diagram D.    
     '''
    
     n = 2
@@ -223,8 +225,8 @@ def calc_mcn_info(knot_dict):
         n += 1
 
     
-    # If control passes the above while loop, then it was not able to find a coloring beginning
-    # with less than n - 1 strands.  In that case, return n - 1 colorability and an arbitrary subset
+    # If control passes the above while loop, then a valid coloring with less than n - 1 strands
+    # was not found.  In that case, return n - 1 colorability and an arbitrary subset
     # of n - 1 strands.
     return (set(knot_dict.keys()).pop, n)
     
@@ -232,11 +234,13 @@ def calc_mcn_info(knot_dict):
 def print_knot_dictionary(knot_dict):
     '''
     Nicely prints out a knot dictionary.
+    
     input:
         knot_dict: a knot dictionary as put out by create_knot_dictionary.
         
     output:
-        Prints out the strands of the 
+        Prints out the strands of the knot dictionary, their corresponding subsequences in the
+        Gauss code, and the crossings that the strand is over.
     '''
     
     print("\nKnot dictionary:\n")
@@ -252,16 +256,16 @@ def main():
     gauss_code = process_gauss_code(raw_gauss_code)
     knot_dict = create_knot_dictionary(gauss_code)
 
-    seed_strand_set, mcn = calc_mcn_info(knot_dict)
+    seed_strand_set, wirt_num = calc_wirt_info(knot_dict)
     
     if flags.verbose:
         print_knot_dictionary(knot_dict)
         print('\nSeed strand set: {}'.format(seed_strand_set))
-        print("Meridional coloring number: {}".format(mcn))
+        print("Wirtinger number: {}".format(wirt_num))
     elif flags.quiet:
-        print(mcn)
+        print(wirt_num)
     else:
-        print("Meridional coloring number: {}".format(mcn))
+        print("Wirtinger number: {}".format(wirt_num))
     
 
 if __name__ == '__main__':    
