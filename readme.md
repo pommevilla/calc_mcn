@@ -145,7 +145,7 @@ Can only currently handle knots with fewer than 26 crossings, though I have modi
 
 More information about the Gauss code of a knot diagram can be found [here][gaussinfo].
 
-The motivation for this program comes from the problem of finding generating sets of the Wirtinger presentation of the fundamental group of a knot exterior.  The coloring described in the first paragraph is an abstraction of a Wirtinger relation derived from the crossing of a knot diagram.  Thus, when we find a set of *k* strands that colors a whole knot diagram, we have actually found a set of strands that generates the entire knot group via Wirtinger relations.  
+The motivation for this program comes from the problem of finding generating sets of the Wirtinger presentation of the fundamental group of a knot exterior.  The coloring described in the first paragraph is an abstraction of a Wirtinger relation derived from the crossing of a knot diagram.  Thus, when we find a set of *k* strands that colors a whole knot diagram, we have actually found a set of strands whose meridians generate the entire knot group, as can be seen by iterating the Wirtinger relations in the diagram.  
 
 In [our paper][wirtpaper], we define the *Wirtinger number* of a knot as the least integer *n* such that the knot has a diagram that is *n*-meridionally colorable, and show that this number is equal to the bridge number of a knot.  Having done so, we established a combinatoric-based approach for finding the bridge number of a knot and have added bridge number information for knots with 12, 13, 14, 15, and 16 crossings. Sreadsheets containing this information are available on Alexandra Kjuchukova's website [here][bridgelink].  
 
