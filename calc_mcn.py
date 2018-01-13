@@ -48,7 +48,7 @@ def create_knot_dictionary(gauss_code):
     Creates a knot dictionary from a Gauss code.
     
     input:
-        gauss_code - a list of ints representing the Gauss code of the knot.  See attached email for explanation for the algorithm and sample run.
+        gauss_code - a list of ints representing the Gauss code of the knot. 
             
     output:
         a dictionary representing the diagram of the Gauss code.
